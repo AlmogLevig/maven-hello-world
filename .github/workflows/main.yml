@@ -32,5 +32,5 @@ jobs:
       - name: Build + package with Maven
         run: mvn -B package --file ./my-app/pom.xml
 
-      - name: Run Image
-        run: docker build -it almogLevig/hello-maven:letest .
+      - name: Build Image
+        run: docker build -t almogLevig/hello-maven:letest .
