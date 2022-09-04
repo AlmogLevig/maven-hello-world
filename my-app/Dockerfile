@@ -7,7 +7,7 @@ FROM maven:3.8.6-jdk-8 AS build
 WORKDIR /build
 COPY /pom.xml .
 COPY src/ /build/src/
-RUN mvn -Dmaven.test.skip=true package -Dcheckstyle.skip
+RUN mvn -Dmaven.test.skip=true package -Dversion=1.0.1 -Dcheckstyle.skip
 
 
 FROM openjdk:8-jre-alpine3.9
