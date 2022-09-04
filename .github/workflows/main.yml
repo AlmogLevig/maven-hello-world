@@ -33,4 +33,13 @@ jobs:
         run: mvn -B package --file ./my-app/pom.xml
 
       - name: Build Image
-        run: docker build -t almoglevig/hello-maven ./my-app/Dockerfile
+        run: docker build -t almoglevig/hello-maven /my-app/Dockerfile
+
+      - name: Step 6 - Login to DockerHub
+        uses: docker/login-action@v1
+        with:
+          username: '${{secrets.DOCKERHUB_USERNAME}}'
+          password: '${{secrets.DOCKERHUB_TOKEN}}'
+
+      - name: Push to Dockerfile
+        run: docker push almoglevig/hello-maven
