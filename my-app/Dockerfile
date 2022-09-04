@@ -4,7 +4,7 @@ USER defuser
 
 
 FROM maven:3.8.6-jdk-8 AS build
-WORKDIR /app
+WORKDIR /src
 COPY ./src/pom.xml /app
 RUN "mvn -B clean  package --file ./my-app/pom.xml"
 CMD 'ls'
