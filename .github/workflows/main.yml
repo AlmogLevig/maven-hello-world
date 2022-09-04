@@ -29,5 +29,8 @@ jobs:
           java-version: 8
           distribution: 'adopt'
           cache: maven
-      - name: Build with Maven
+      - name: Build + package with Maven
         run: mvn -B package --file ./my-app/pom.xml
+
+      - name: Run Image
+        run: docker build -it almogLevig/hello-maven:letest .
