@@ -33,7 +33,7 @@ jobs:
         run: mvn -B package --file ./my-app/pom.xml
 
       - name: Build Image
-        run: docker build -t ${{secrets.DOCKERHUB_USERNAME}}/hello-maven /my-app/Dockerfile
+        run: docker build -t ${{secrets.DOCKERHUB_USERNAME}}/hello-maven .
 
       - name: Step 6 - Login to DockerHub
         uses: docker/login-action@v1
