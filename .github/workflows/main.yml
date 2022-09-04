@@ -49,4 +49,4 @@ jobs:
         run: docker build -t almoglevig/hello-maven ./my-app/
 
       - name: Push to Dockerfile
-        run: docker push almoglevig/hello-maven:lateset
+        run: docker push almoglevig/hello-maven
