@@ -29,8 +29,8 @@ jobs:
           java-version: 8
           distribution: 'adopt'
           cache: maven
-      - name: < Step 2 >  \n Build + package with Maven
-        run: mvn -B clean  package --file ./my-app/pom.xml
+      # - name: < Step 2 >  \n Build + package with Maven
+      #   # run: mvn -B clean  package --file ./my-app/pom.xml
       
       - name: < Step 3 > \n tree
         run: tree
