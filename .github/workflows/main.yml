@@ -30,7 +30,8 @@ jobs:
           distribution: 'adopt'
           cache: maven
       - name: Build + package with Maven
-        run: mvn -B package --file ./my-app/pom.xml
+        run: mvn -B clean  package --file ./my-app/pom.xml
+      
       - name: tree
         run: tree
 
