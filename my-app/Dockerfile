@@ -4,11 +4,13 @@ USER defuser
 
 
 FROM maven:3.8.6-jdk-8 AS build
-WORKDIR /app
-COPY ./src/pom.xml /app
-RUN 'ls'
-RUN "mvn -B clean  package --file ./app/pom.xml"
+COPY my-app/pom.xml /my-app/pom.xml
+COPY src my-app/src/
+WORKDIR /my-app/
+RUN "mvn -B clean  package --file /my-app/pom.xml"
 CMD 'ls'
+# COPY --from=MAVEN_TOOL_CHAIN /tmp/target/wizard*.jar $CATALINA_HOME/webapps/wizard.war
+
 
 FROM openjdk:8-jre-alpine3.9
 WORKDIR /app-art
