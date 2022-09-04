@@ -39,7 +39,7 @@ jobs:
           password: '${{secrets.DOCKERHUB_TOKEN}}'
 
       - name: Build Image
-        run: docker build -t almoglevig/hello-maven .
-        
+        run: docker build -t almoglevig/hello-maven ./my-app/
+
       - name: Push to Dockerfile
         run: docker push almoglevig/hello-maven:lateset
